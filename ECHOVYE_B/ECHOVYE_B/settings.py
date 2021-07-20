@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-f9vokn$hog-06s$4gi70&gx4ars541$y(&o1fgc3c*8yqnzob3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.1.36","localhost"]
+ALLOWED_HOSTS = ["192.168.1.36","localhost","192.168.43.123"]
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -42,11 +43,14 @@ INSTALLED_APPS = [
     'customer',
     'sofacushion',
     'netlon',
-    'orders'
+    'orders',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -82,7 +86,7 @@ WSGI_APPLICATION = 'ECHOVYE_B.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecohyve',
+        'NAME': 'ecohyve1',
         'PASSWORD':'Sunish23@',
         'HOST':'localhost',
         'PORT':'3306',
