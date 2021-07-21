@@ -5,7 +5,7 @@ class CustomerDetail(models.Model):
     CustomerName = models.CharField(max_length=100)
     CustomerId = models.CharField(max_length= 30,primary_key = True)
     CustomerAddress = models.TextField(blank=True,null=True)
-    CustomerEmail = models.EmailField(max_length=55,unique = True)
+    CustomerEmail = models.EmailField(max_length=55,blank=True,null=True)
     CustomerPhone1 = models.CharField(max_length=10)
     CustomerPhone2 = models.CharField(max_length=10,null=True,blank=True)
     CustomerTargetDate = models.CharField(max_length=30)
